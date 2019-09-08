@@ -1,3 +1,2 @@
-Текстовый файл. Тестирование загрузки в git.
-
-Добавление данных 
+This is a homework в„–1 project for #learn.python 
+Additional information: https://learn.python.ru/lessons/homework_http.html?full#cover

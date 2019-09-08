@@ -1,2 +1,4 @@
-*.png
-passwords.txt
+__pycache__/
+env/
+static/
+templates/
