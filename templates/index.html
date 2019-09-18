@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{%block head %}
+
+{% endblock %}
+
+{%block body %}
+<div class="content">
+<h1>Template</h1>
+<table class="table table-sm ta">
+    <thead class="thead-dark" >
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+      {% for task in tasks %}
+      <tr>
+            <th scope="row"></th>
+            <td>{{ task.content}}</td>
+            <td>{{ task.date_created.date()}} </td>
+            <td></td>
+        </tr>
+       {% endfor %} 
+    </tbody>
+  </table>
+  <h1>Action</h1> 
+
+<form action="/" method="POST">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Data to DB">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+</form> 
+
+</div> 
+
+{% endblock %}

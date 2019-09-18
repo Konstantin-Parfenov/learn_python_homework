@@ -31,7 +31,7 @@ def mosocw_op_data_downloader(target_url):
     #main_body    
     print("Prepearing JSON data format...")
     data = names_data_response.json()
-    print(data)
+    
     ### ?api_key=8f9de7b0e4ac17fae2ab9f4a87aaced2
 
     #end time
@@ -40,4 +40,16 @@ def mosocw_op_data_downloader(target_url):
     print("Ending date and time:",date_time)
     print("Completed")
 
+    with open (file=data.txt, mode=w , encoding=utf-8 ) as f:
+        f.write(data)
+
+    if "Cells" in data[0]:
+            try:
+                print(f"#DEGUG {data['data']['Cells']['global_id']}")
+                return data['data']['Cells']['global_id']
+            except(IndexError, TypeError):
+                return False
+    else:
+        print(f"#DEGUG error 1")
+    
 mosocw_op_data_downloader('https://apidata.mos.ru/v1/datasets/2009/rows?api_key=8f9de7b0e4ac17fae2ab9f4a87aaced2')
